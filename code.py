@@ -51,6 +51,6 @@ while my_guess != random_number:
             counter+=1
 else:
     number_of_tries = len(guess_list)
-    print (f'You guessed correctly and it took {number_of_tries} tries! The random number is {random_number}')
+    print (f'\nYou guessed correctly and it took {number_of_tries} tries! The random number is {random_number}!')
     
         
