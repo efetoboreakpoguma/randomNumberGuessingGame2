@@ -12,22 +12,23 @@ When the player's guess equals the number, tell them they've guessed correctly a
 ''')
 
 random_number = randint(1, 100)
-guess_list = [0]
+guess_list = []
 
 while True:  
     my_guess = int(input('What is your guess: '))
-    guess_list.append(my_guess)
-        
+            
     if my_guess<1 or my_guess>100:
         print ('OUT OF BOUNDS')
         continue
-        
+    
+    guess_list.append(my_guess)        
+    
     if my_guess == random_number:
         number_of_tries = len(guess_list)
         print (f'\nYou guessed correctly and it took {number_of_tries} tries! The random number is {random_number}!')
-        break    
+        break
        
-    if guess_list[-2]:
+    elif len(guess_list)>1:
         if abs(my_guess-random_number) < abs(guess_list[-2]-random_number):
             print ('WARMER!')
         else:
@@ -37,3 +38,4 @@ while True:
             print ('COLD!')
         else:
             print ('WARM!')
+    
