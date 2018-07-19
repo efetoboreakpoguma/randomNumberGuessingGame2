@@ -16,6 +16,7 @@ guess_list = [0]
 
 while True:  
     my_guess = int(input('What is your guess: '))
+    guess_list.append(my_guess)
         
     if my_guess<1 or my_guess>100:
         print ('OUT OF BOUNDS')
@@ -24,9 +25,7 @@ while True:
     if my_guess == random_number:
         number_of_tries = len(guess_list)
         print (f'\nYou guessed correctly and it took {number_of_tries} tries! The random number is {random_number}!')
-        break
-    
-    guess_list.append(my_guess)
+        break    
        
     if guess_list[-2]:
         if abs(my_guess-random_number) < abs(guess_list[-2]-random_number):
